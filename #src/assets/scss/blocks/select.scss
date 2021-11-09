@@ -1,0 +1,79 @@
+.select {
+	position: relative;
+	padding: 0.9rem;
+	padding-right: 4rem;
+	height: 5.4rem;
+	width: 22.7rem;
+	@extend %montserrat-bold;
+	font-size: 1.9rem;
+	line-height: 1;
+	vertical-align: top;
+	border-radius: 30px;
+	cursor: pointer;
+	border: 3px solid $btn;
+	color: $black;
+	background-color: $white;
+	cursor: pointer;
+	user-select: none;
+	transition: border-radius 0.2s linear;
+
+	&.active {
+		border-radius: 2px;
+
+		.default__option::after {
+			top: 13px;
+			transform: rotate(-225deg);
+		}
+
+		.select__ul {
+			display: flex;
+		}
+	}
+
+	.default__option {
+		position: relative;
+		z-index: 1000;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 18%;
+			right: -24px;
+			width: 15px;
+			height: 15px;
+			border: 2px solid;
+			border-color: transparent transparent $black $black;
+			transform: rotate(-45deg);
+			transition: rotate 0.3s linear;
+		}
+	}
+	.select__ul {
+		position: absolute;
+		top: 107%;
+		left: 0;
+		right: 0;
+		z-index: 999;
+		width: 100%;
+		padding: 1.5rem 1rem;
+		display: none;
+		flex-direction: column;
+		background: $white;
+		border-radius: 2px;
+		@extend %montserrat-regular;
+
+		& > li {
+			margin-bottom: 2rem;
+		}
+	}
+
+	.option {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.period {
+		line-height: 1.5;
+		margin-right: 3rem;
+	}
+}

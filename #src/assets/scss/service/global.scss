@@ -1,0 +1,65 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	@extend %montserrat-regular;
+	font-size: 2.6rem;
+	color: $black;
+	line-height: 1.4;
+}
+main {
+	padding-top: 10rem;
+
+	@include breakpoint($desktop-large) {
+		padding-top: 16rem;
+	}
+
+	@include breakpoint($tablet) {
+		padding-top: 27rem;
+	}
+
+	@include breakpoint($mobile) {
+		padding-top: 32rem;
+	}
+}
+
+a {
+	cursor: pointer;
+}
+
+.page {
+	width: 100%;
+	margin: 0 auto;
+	background-color: $white;
+	overflow: hidden;
+}
+
+.container {
+	width: 100%;
+	max-width: 155.5rem;
+	padding: 0 2rem;
+	margin: 0 auto;
+}
+
+.discount {
+	display: inline-block;
+	width: 6rem;
+	height: 3rem;
+	color: $black;
+	font-size: 2rem;
+	line-height: 1.6;
+	text-align: center;
+	background-color: $yellow;
+	transform: skew(-10deg);
+}
+
+.rub::before {
+	content: "\20BD";
+}

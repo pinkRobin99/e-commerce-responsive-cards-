@@ -1,0 +1,44 @@
+.btn {
+	display: block;
+	padding: 1.5rem 2rem;
+	@extend %montserrat-bold;
+	font-size: 1.8rem;
+	line-height: 1;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	
+
+	&-header {
+		border: 3px solid $btn;
+		color: $black;
+		background-color: $white;
+
+		&:hover {
+			background-color: $btn;
+			color: $white;
+		}
+	}
+
+	&-card {
+		margin: 0 auto;
+		max-width: 20rem;
+		padding-right: 5rem;
+		padding-left: 5rem;
+		color: $white;
+		background-color: $btn;
+		text-transform: uppercase;
+		border: none;
+
+		&:hover {
+			background-color: darken($btn, 10%);
+		}
+	}
+
+	&-green {
+		background-color: $btn-green;
+		&:hover {
+			background-color: darken($btn-green, 5%);
+		}
+	}
+}

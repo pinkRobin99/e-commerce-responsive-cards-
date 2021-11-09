@@ -1,0 +1,63 @@
+.header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1000;
+
+	padding: 1.4rem 0;
+
+	background-color: $white;
+
+	@include breakpoint($mobile) {
+		position: absolute;
+	}
+}
+
+.menu {
+	padding: 0 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+
+	@include breakpoint($desktop-large) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__part {
+		display: flex;
+		//flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+
+		&:first-child {
+			margin-right: 2rem;
+
+			@include breakpoint($desktop-large) {
+				margin-bottom: 2rem;
+				margin-right: 0;
+			}
+		}
+
+		@include breakpoint($tablet) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__text {
+		text-align: center;
+		margin-right: 2rem;
+		@extend %montserrat-bold;
+		font-size: 2.3rem;
+		color: $black;
+
+		@include breakpoint($tablet) {
+			font-size: 2rem;
+			margin-right: 0;
+			margin-bottom: 1rem;
+		}
+	}
+}
